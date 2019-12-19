@@ -36,8 +36,8 @@ endfor
 let s:green           = "84"
 let s:red             = "203"
 
-let s:burning_chrome  = "73"
-let s:flatline_purple = "140"
+let s:burning_chrome  = "43"
+let s:flatline_purple = "147"
 let s:straylight_gold = "221"
 
 " NAMED VARIABLES
