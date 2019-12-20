@@ -30,33 +30,44 @@ for i in range(232,255)
   let s:gray_{i} = string(i)
 endfor
 
+
+if &background == "dark"
+  let s:bg              = s:gray_235
+  let s:bg_alt          = s:gray_236
+  let s:bg_subtle       = s:gray_239
+else
+  " there is no light mode
+  " you are only controlling contrast
+  let s:bg              = s:gray_236
+  let s:bg_alt          = s:gray_237
+  let s:bg_subtle       = s:gray_239
+endif
+
 " COLOR
 " only for setting named variables
 """
-let s:green           = "84"
-let s:red             = "203"
 
-let s:burning_chrome  = "43"
-let s:flatline_purple = "147"
+let s:burning_chrome  = "81"
+let s:millions_purple = "183"
+let s:flatline_red    = "210"
 let s:straylight_gold = "221"
+let s:gibson_green    = "85"
 
-" NAMED VARIABLES
-let s:bg              = s:gray_234
-let s:bg_alt          = s:gray_232
-let s:bg_subtle       = s:gray_239
-let s:norm            = s:white
+let s:norm            = s:gray_255
 let s:norm_opposite   = s:black
 let s:norm_subtle     = s:gray_249
 let s:comment         = s:gray_241
 let s:accent          = s:gray_250
 
-let s:primary         = s:burning_chrome
-let s:secondary       = s:flatline_purple
+let s:primary         = s:millions_purple
+let s:secondary       = s:burning_chrome
 let s:tertiary        = s:straylight_gold
+let s:quaternary      = s:flatline_red
+let s:quinary         = s:gibson_green
 let s:visual          = s:straylight_gold
 
-let s:success         = s:green
-let s:error           = s:red
+let s:success         = s:gibson_green
+let s:error           = s:flatline_red
 
 " =============================================================================
 " HIGHLIGHT IT
@@ -80,7 +91,7 @@ endif
 call s:h("Cursor",        {"bg": s:norm, "fg": s:norm_opposite})
 
 call s:h("Comment",       {"fg": s:comment})
-call s:h("Constant",      {"fg": s:primary})
+call s:h("Constant",      {"fg": s:norm})
 hi! link character        constant
 hi! link number           constant
 hi! link Boolean          Constant
@@ -175,10 +186,11 @@ call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
 " RUBY
 call s:h("rubyClass",            {"fg": s:primary})
 hi! link rubyDefine        rubyClass
+hi! link rubyMacro         rubyClass
 hi! link rubyMethodBlock   Normal
 
 
-call s:h("rubyClassName",        {"fg": s:secondary})
+call s:h("rubyClassName",        {"fg": s:tertiary})
 hi! link rubyConstant    rubyClassName
 hi! link rubyMethodName  rubyClassName
 
@@ -189,12 +201,14 @@ hi! link rubyConditionalModifier   rubyClass
 
 call s:h("rubyInstanceVariable", {"fg": s:secondary})
 call s:h("rubyString",           {"fg": s:norm})
+call s:h("rubyBlock",            {"fg": s:tertiary})
+call s:h("rubyDoBlock",          {"fg": s:quinary})
+call s:h("rubySymbol",           {"fg": s:quaternary})
 
 " MARKDOWN
 call s:h("VimwikiCode",     {"fg": s:norm_subtle})
 call s:h("VimwikiPre",      {"fg": s:norm_subtle})
 call s:h("VimwikiListTodo", {"fg": s:norm_subtle})
-
 " VIM
 call s:h("netrwTreeBar",      {"fg": s:comment, "cterm": "bold"})
 call s:h("netrwPlain",        {"fg": s:norm})
