@@ -170,10 +170,18 @@ call s:h("TabLine",       {"fg": s:norm, "bg": s:bg_alt})
 call s:h("TabLineSel",    {"fg": s:primary, "bg": s:bg_subtle, "cterm": "bold"})
 call s:h("TabLineFill",   {"fg": s:norm, "bg": s:bg_alt})
 call s:h("CursorColumn",  {"bg": s:bg_alt})
-call s:h("CursorLine",    {"bg": s:bg_alt})
+call s:h("CursorLine",    {})
 call s:h("ColorColumn",   {"bg": s:bg_subtle})
 call s:h("MatchParen",    {"bg": s:bg_subtle, "fg": s:norm})
 call s:h("qfLineNr",      {"fg": s:norm_subtle})
+
+" NETRW
+call s:h("netrwTreeBar",      {"fg": s:comment, "cterm": "bold"})
+call s:h("netrwPlain",        {"fg": s:norm})
+call s:h("netrwClassify",     {"fg": s:norm_subtle, "cterm": "bold"})
+call s:h("netrwDir",          {"fg": s:norm_subtle})
+call s:h("netrwTreeBarSpace", {"fg": s:norm_subtle, "cterm": "bold"})
+call s:h("netrwExe",          {"fg": s:primary, "cterm": "bold"})
 
 " HTML
 call s:h("htmlH1",        {"bg": s:bg, "fg": s:norm})
@@ -188,7 +196,6 @@ call s:h("rubyClass",            {"fg": s:primary})
 hi! link rubyDefine        rubyClass
 hi! link rubyMacro         rubyClass
 hi! link rubyMethodBlock   Normal
-
 
 call s:h("rubyClassName",        {"fg": s:tertiary})
 hi! link rubyConstant    rubyClassName
@@ -209,11 +216,13 @@ call s:h("rubySymbol",           {"fg": s:quaternary})
 call s:h("VimwikiCode",     {"fg": s:norm_subtle})
 call s:h("VimwikiPre",      {"fg": s:norm_subtle})
 call s:h("VimwikiListTodo", {"fg": s:norm_subtle})
-" VIM
-call s:h("netrwTreeBar",      {"fg": s:comment, "cterm": "bold"})
-call s:h("netrwPlain",        {"fg": s:norm})
-call s:h("netrwClassify",     {"fg": s:norm_subtle, "cterm": "bold"})
-call s:h("netrwDir",          {"fg": s:norm_subtle})
-call s:h("netrwTreeBarSpace", {"fg": s:norm_subtle, "cterm": "bold"})
-call s:h("netrwExe",          {"fg": s:primary, "cterm": "bold"})
+
+" SNAP
+call s:h("SnapTitleNorm",      {"fg": s:norm_opposite, "bg": s:norm})
+call s:h("SnapTextTodo",       {"fg": s:norm_opposite, "bg": s:norm_subtle})
+call s:h("SnapTextDone",      {"fg": s:norm_opposite, "bg": s:bg_subtle})
+hi! link SnapTextStart   SnapTextDone
+hi! link SnapTextTrail   SnapTextDone
+hi! link SnapTextHead    SnapTextDone
+call s:h("SnapTitleBang",      {"fg": s:norm_opposite, "bg": s:error})
 
