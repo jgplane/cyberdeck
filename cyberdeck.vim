@@ -218,11 +218,25 @@ call s:h("VimwikiPre",      {"fg": s:norm_subtle})
 call s:h("VimwikiListTodo", {"fg": s:norm_subtle})
 
 " SNAP
-call s:h("SnapTitleNorm",      {"fg": s:norm_opposite, "bg": s:norm})
-call s:h("SnapTextTodo",       {"fg": s:norm_opposite, "bg": s:norm_subtle})
-call s:h("SnapTextDone",      {"fg": s:norm_opposite, "bg": s:bg_subtle})
+call s:h("SnapTitleNorm",  {"fg": s:norm_opposite, "bg": s:norm})
+call s:h("SnapTitleBang",  {"fg": s:norm_opposite, "bg": s:error})
+call s:h("SnapTextTodo",   {"fg": s:norm_opposite, "bg": s:norm_subtle})
+call s:h("SnapTextHead",   {"fg": s:norm_opposite, "bg": s:accent})
+call s:h("SnapEmphasis",   {"fg": s:norm_subtle})
+call s:h("SnapTextDone",   {"fg": s:norm_opposite, "bg": s:bg_subtle})
 hi! link SnapTextStart   SnapTextDone
 hi! link SnapTextTrail   SnapTextDone
-hi! link SnapTextHead    SnapTextDone
-call s:h("SnapTitleBang",      {"fg": s:norm_opposite, "bg": s:error})
 
+" TOPO
+call s:h("TopoTitle",      {"fg": s:primary})
+call s:h("TopoHeader",     {"fg": s:secondary})
+call s:h("TopoCode",       {"fg": s:norm_subtle})
+call s:h("TopoEmender",    {"fg": s:norm_subtle})
+call s:h("TopoEmphasis",   {"fg": s:norm_subtle})
+hi! link TopoComment  Comment
+
+" NAB
+call s:h("NabId",         {"fg": s:primary})
+call s:h("NabTitle",      {"fg": s:secondary})
+call s:h("NabSource",     {"fg": s:norm_subtle})
+call s:h("NabNote",       {"fg": s:norm_subtle})
