@@ -1,5 +1,5 @@
 " Name:       cyberdeck.vim
-" Version:    0.1.0
+" Version:    0.3.0
 " Maintainer: github.com/jgplane
 " License:    The MIT License (MIT)
 " Terminal only colorscheme
@@ -234,6 +234,19 @@ call s:h("TopoCode",       {"fg": s:norm_subtle})
 call s:h("TopoEmender",    {"fg": s:norm_subtle})
 call s:h("TopoEmphasis",   {"fg": s:norm_subtle})
 hi! link TopoComment  Comment
+
+" LEAF
+call s:h("LeafH1",             {"fg": s:primary})
+call s:h("LeafH2",             {"fg": s:secondary})
+call s:h("LeafH3",             {"fg": s:secondary})
+call s:h("LeafH4",             {"fg": s:secondary})
+call s:h("HeadingLine",        {"fg": s:norm_subtle})
+call s:h("LeafQuote",          {"fg": s:norm_subtle})
+call s:h("LeafCode",           {"fg": s:norm_subtle})
+call s:h("LeafList",           {"fg": s:norm_subtle})
+call s:h("LeafEmenderOpen",    {"fg": s:norm_subtle})
+call s:h("LeafEmenderClose",   {"fg": s:norm_subtle})
+call s:h("LeafComment",        {"fg": s:comment})
 
 " NAB
 call s:h("NabId",         {"fg": s:primary})
